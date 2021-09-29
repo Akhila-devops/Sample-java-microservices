@@ -1,6 +1,6 @@
 pipeline {
 agent {
-label 'slave'
+label 'build node'
 }
 
 stages {
@@ -15,7 +15,7 @@ steps
     }
     
 }
-stage ('Build') 
+stage ('build') 
 {
     steps
     {
