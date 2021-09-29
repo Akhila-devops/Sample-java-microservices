@@ -1,6 +1,6 @@
 pipeline {
 agent {
-label 'Build-server'
+label 'slave'
 }
 
 stages {
@@ -28,16 +28,16 @@ stage ('dockerimageBuild')
     {
     steps
     {
-        sh "cd /home/ubuntu/workspace/devops28thsep/account-service; sudo docker build -t account-service . " 
+        sh "cd /home/ubuntu/workspace/microservice/account-service; sudo docker build -t account-service . " 
     }
 }
      stage ('dockerimagepush ') 
 {
     steps
     {
-       sh "cd /home/ubuntu/workspace/devops28thsep/account-service ; sudo  docker login -uankit1111 -pmiet@1234 "
-        sh "cd /home/ubuntu/workspace/devops28thsep/account-service ; sudo docker tag account-service ankit1111/account-service "
-        sh "cd /home/ubuntu/workspace/devops28thsep/account-service ; sudo docker push ankit1111/account-service  "
+       sh "cd /home/ubuntu/workspace/microservice/account-service ; sudo  docker login -uakhiladocker12 -palekya@12 "
+        sh "cd /home/ubuntu/workspace/microservice/account-service ; sudo docker tag account-service akhiladocker12/dev "
+        sh "cd /home/ubuntu/workspace/microservice/account-service ; sudo docker push akhiladocker12/dev "
         
         
     }
